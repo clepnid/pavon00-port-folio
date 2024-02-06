@@ -79,7 +79,7 @@ class WindowComponentClose extends Component {
         return isVisible ? (
             <Window
                 style={{
-                    maxWidth: isMobile ? '80%' : '100%', // Ajustar el ancho en dispositivos móviles
+                    maxWidth: isMobile ? (isMaximized ? '100%' : '80%') : (isMaximized ? '100%' : '50%'), // Ajustar el ancho en dispositivos móviles
                     minWidth: isMobile ? '80%' : '50%', // Ajustar el ancho en dispositivos móviles
                     width: isMaximized ? '100vw' : 'auto',
                     height: 'auto',

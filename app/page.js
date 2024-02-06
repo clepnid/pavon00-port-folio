@@ -59,7 +59,7 @@ export default function Home() {
               <h2 className="name">Antonio Jesús Pavón Correa</h2>
               <p className="job-title">Ingeniero Software</p>
               <p className="job-type">Full Stack</p>
-              <p className="description">8 añitos en este mundillo y desde el primer día me emociona imaginar y crear cualquier cosa.</p>
+              <p className="description">8 años en este mundillo y desde el primer día me emociona imaginar y crear cualquier cosa.</p>
               <p className="description">Backend &gt; Frontend</p>
               <div>
                 <Button primary onClick={llamarMetodoVisibilidadClepnid}>Clepnid</Button>
