@@ -87,7 +87,7 @@ class WindowComponentClose extends Component {
                     left: windowPosition.x,
                     top: windowPosition.y,
                     fontFamily: 'MS Sans Serif',
-                    zIndex: isHovered ? 2 : 1, // Asegúrate de que la ventana maximizada esté encima de otras ventanas
+                    zIndex: isHovered ? 3 : 2, // Asegúrate de que la ventana maximizada esté encima de otras ventanas
                 }}
                 onMouseOver={() => this.setState({ isHovered: true })}
                 onMouseOut={() => this.setState({ isHovered: false })}
