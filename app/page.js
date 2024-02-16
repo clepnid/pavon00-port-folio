@@ -36,7 +36,7 @@ export default function Home() {
         <div>
           <WindowComponentClose ref={btnClepnid} title="Clepnid" initialX={150} initialY={150} contenido={
             <div className="presentation-container">
-            <a href="https://clepnid.github.io/">Ir al sitio.</a>
+            <a href="https://clepnid-doc.vercel.app/">Ir al sitio.</a>
               <p className="type-modulo">Aplicación Escritorio Windows, Linux, MacOs</p>
               <p className="name">Cliente/Servidor dinámico trabajando en dos modos a la vez: </p>
               <p className="type-modulo">Local</p>
