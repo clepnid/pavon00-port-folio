@@ -67,7 +67,7 @@ class WindowComponent extends Component {
                     left: windowPosition.x,
                     top: windowPosition.y,
                     fontFamily: 'MS Sans Serif',
-                    zIndex: isHovered ? 2 : 0
+                    zIndex: isHovered ? 1 : 0
                 }}
                 onMouseOver={this.handleMouseOver}
                 onMouseOut={this.handleMouseOut}
