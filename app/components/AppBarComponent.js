@@ -7,12 +7,12 @@ import './styles/fuentes.css'; // Ruta correcta hacia tu archivo CSS
 class AppBarComponent extends Component {
   render() {
     // Obtén la función pasada por parámetro
-    const { funcionBoton } = this.props;
+    const {themeChanger, funcionBoton } = this.props;
 
     return (
       <AppBar style={{ bottom: 0, top: 'unset' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Button style={{ padding: '8 0px', fontFamily: 'MS Sans Serif' }} primary onClick={funcionBoton}>Cambiar Tema</Button>
+          <Button style={{ padding: '8 0px', fontFamily: 'MS Sans Serif' }} primary onClick={funcionBoton}>{themeChanger ? 'Parar Cambio Tema Automático' : 'Cambiar Tema'}</Button>
           <Separator orientation='vertical' size='43px' />
           <div style={{ padding: '0 8px', fontFamily: 'MS Sans Serif' }}>ilovepavon@gmail.com</div>
           <Separator orientation='vertical' size='43px' />

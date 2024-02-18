@@ -1,11 +1,11 @@
 "use client"; // top to the file
 
 import Image from "next/image";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import WindowComponent from './components/WindowComponent';
 import WindowComponentClose from './components/WindowComponentClose';
-import { Button } from 'react95';
+import { Button, WindowContent } from 'react95';
 
 // pick a theme of your choice
 
@@ -135,6 +135,7 @@ const themes = [
   wmii
 ];
 
+
 import AppBarComponent from './components/AppBarComponent';
 import { JavaOriginal, JavascriptOriginal, ReactOriginal, BashOriginal, CplusplusOriginal } from 'devicons-react';
 import './components/styles/perfil.css'; // Ruta correcta hacia tu archivo CSS
@@ -142,13 +143,29 @@ import fgifView from './images/fgif-view.gif';
 
 export default function Home() {
   const [theme, setTheme] = useState(white); // Estado para el tema actual
+  const [themeChanger, setThemeChanger] = useState(false); // Estado para el tema actual
   const btnClepnid = useRef(null);
   const btnFgif = useRef(null);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (themeChanger) {
+        const randomIndex = Math.floor(Math.random() * themes.length);
+        setTheme(themes[randomIndex]);
+      }
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [themeChanger]); // Se ejecuta cada vez que cambia themeChanger
+
   const cambiarTemaAleatorio = () => {
     const randomTheme = themes[Math.floor(Math.random() * themes.length)];
-    setTheme(randomTheme);
+    if (!themeChanger) {
+      setTheme(randomTheme);
+    }
+    setThemeChanger(!themeChanger);
   };
+
 
   const llamarMetodoVisibilidadClepnid = () => {
     if (btnClepnid.current) {
@@ -169,30 +186,30 @@ export default function Home() {
           <WindowComponentClose ref={btnClepnid} title="Clepnid" initialX={150} initialY={150} contenido={
             <div className="presentation-container">
             <a href="https://clepnid-doc.vercel.app/">Ir al sitio.</a>
-              <p className="type-modulo">Aplicación Escritorio Windows, Linux, MacOs</p>
-              <p className="name">Cliente/Servidor dinámico trabajando en dos modos a la vez: </p>
-              <p className="type-modulo">Local</p>
-              <p className="description">Con solo presionar algunas teclas, nuestra aplicación permite simular las acciones de copiar y pegar del portapapeles, facilitando así el intercambio de archivos, imágenes y texto entre dispositivos conectados a la misma red.<JavaOriginal className="dev-image" /></p>
-              <p className="type-modulo">Web</p>
-              <p className="description">Nuestra plataforma ofrece acceso web a los diversos elementos compartidos en red, centrándose en la interacción a través de páginas web modulares para archivos, que permiten reproducir, editar, descargar, y más. <JavascriptOriginal className="dev-image" />    <ReactOriginal className="dev-image" />Además, integra un sistema de backend espejo para redirigir a otros servicios web en diferentes puertos. <BashOriginal className="dev-image" /></p>
+              <h2 style={{ padding: '0.5rem' }}>Aplicación Escritorio Windows, Linux, MacOs</h2>
+              <h1>Cliente/Servidor dinámico trabajando en dos modos a la vez: </h1>
+              <h3 style={{ padding: '0.5rem' }}>Local</h3>
+              <p >Con solo presionar algunas teclas, nuestra aplicación permite simular las acciones de copiar y pegar del portapapeles, facilitando así el intercambio de archivos, imágenes y texto entre dispositivos conectados a la misma red.<JavaOriginal className="dev-image" /></p>
+              <h3 style={{ padding: '0.5rem' }}>Web</h3>
+              <p>Nuestra plataforma ofrece acceso web a los diversos elementos compartidos en red, centrándose en la interacción a través de páginas web modulares para archivos, que permiten reproducir, editar, descargar, y más. <JavascriptOriginal className="dev-image" />    <ReactOriginal className="dev-image" />Además, integra un sistema de backend espejo para redirigir a otros servicios web en diferentes puertos. <BashOriginal className="dev-image" /></p>
             </div>
           } />
           <WindowComponentClose ref={btnFgif} title="Fgif" initialX={150} initialY={150} contenido={
             <div className="presentation-container">
               <Image style={{ width: '100%', height: 'auto' }} src={fgifView} />
               <a href="https://clepnid.github.io/fgif/">Ir al sitio.</a>
-              <p className="type-modulo">Aplicación Escritorio Windows</p>
-              <p className="name">Abre imagenes animadas con extensión .gif y disfruta viendo como se mueve.</p>
-              <p className="description">Se ha desarrollado una aplicación de escritorio diseñada para embellecer la pantalla del usuario. La imagen elegida se mostrará en la parte superior de todas las ventanas sin interferir con su manipulación, garantizando así una experiencia sin interrupciones. Además, se ofrece la funcionalidad de redimensionar y mover la imagen libremente en la pantalla según las preferencias del usuario. <JavaOriginal className="dev-image" /> <CplusplusOriginal className="dev-image" /></p>
+              <h2 style={{ padding: '0.5rem' }}>Aplicación Escritorio Windows</h2>
+              <h1>Abre imagenes animadas con extensión .gif y disfruta viendo como se mueve.</h1>
+              <p style={{ padding: '0.5rem' }}>Se ha desarrollado una aplicación de escritorio diseñada para embellecer la pantalla del usuario. La imagen elegida se mostrará en la parte superior de todas las ventanas sin interferir con su manipulación, garantizando así una experiencia sin interrupciones. Además, se ofrece la funcionalidad de redimensionar y mover la imagen libremente en la pantalla según las preferencias del usuario. <JavaOriginal className="dev-image" /> <CplusplusOriginal className="dev-image" /></p>
             </div>
           } />
           <WindowComponent title="Un poco sobre mí" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
-              <h2 className="name">Antonio Jesús Pavón Correa</h2>
+              <h1>Antonio Jesús Pavón Correa</h1>
               <p className="job-title">Ingeniero Software</p>
               <p className="job-type">Full Stack</p>
-              <p className="description">8 años en este mundillo y desde el primer día me emociona imaginar y crear cualquier cosa.</p>
-              <p className="description">Backend &gt; Frontend</p>
+              <p >8 años en este mundillo y desde el primer día me emociona imaginar y crear cualquier cosa.</p>
+              <p >Backend &gt; Frontend</p>
               <div>
                 <Button primary onClick={llamarMetodoVisibilidadClepnid}>Clepnid</Button>
               </div>
@@ -203,7 +220,7 @@ export default function Home() {
           } />
 
         </div>
-        <AppBarComponent funcionBoton={cambiarTemaAleatorio}/>
+        <AppBarComponent themeChanger = {themeChanger} funcionBoton={cambiarTemaAleatorio}/>
       </ThemeProvider>
     </div>
   );
