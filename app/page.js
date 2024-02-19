@@ -185,36 +185,36 @@ export default function Home() {
         <div>
           <WindowComponentClose ref={btnClepnid} title="Clepnid" initialX={150} initialY={150} contenido={
             <div className="presentation-container">
-            <a href="https://clepnid-doc.vercel.app/">Ir al sitio.</a>
+            <a style={{ padding: '0.5rem' }} href="https://clepnid-doc.vercel.app/">Ir al sitio.</a>
               <h2 style={{ padding: '0.5rem' }}>Aplicación Escritorio Windows, Linux, MacOs</h2>
-              <h1>Cliente/Servidor dinámico trabajando en dos modos a la vez: </h1>
+              <h1 style={{ padding: '0.5rem' }}>Cliente/Servidor dinámico trabajando en dos modos a la vez: </h1>
               <h3 style={{ padding: '0.5rem' }}>Local</h3>
-              <p >Con solo presionar algunas teclas, nuestra aplicación permite simular las acciones de copiar y pegar del portapapeles, facilitando así el intercambio de archivos, imágenes y texto entre dispositivos conectados a la misma red.<JavaOriginal className="dev-image" /></p>
+              <p style={{ padding: '0.5rem' }}>Con solo presionar algunas teclas, nuestra aplicación permite simular las acciones de copiar y pegar del portapapeles, facilitando así el intercambio de archivos, imágenes y texto entre dispositivos conectados a la misma red.<JavaOriginal className="dev-image" /></p>
               <h3 style={{ padding: '0.5rem' }}>Web</h3>
-              <p>Nuestra plataforma ofrece acceso web a los diversos elementos compartidos en red, centrándose en la interacción a través de páginas web modulares para archivos, que permiten reproducir, editar, descargar, y más. <JavascriptOriginal className="dev-image" />    <ReactOriginal className="dev-image" />Además, integra un sistema de backend espejo para redirigir a otros servicios web en diferentes puertos. <BashOriginal className="dev-image" /></p>
+              <p style={{ padding: '0.5rem' }}>Nuestra plataforma ofrece acceso web a los diversos elementos compartidos en red, centrándose en la interacción a través de páginas web modulares para archivos, que permiten reproducir, editar, descargar, y más. <JavascriptOriginal className="dev-image" />    <ReactOriginal className="dev-image" />Además, integra un sistema de backend espejo para redirigir a otros servicios web en diferentes puertos. <BashOriginal className="dev-image" /></p>
             </div>
           } />
           <WindowComponentClose ref={btnFgif} title="Fgif" initialX={150} initialY={150} contenido={
             <div className="presentation-container">
-              <Image style={{ width: '100%', height: 'auto' }} src={fgifView} />
-              <a href="https://clepnid.github.io/fgif/">Ir al sitio.</a>
+              <Image style={{padding: '0.5rem', width: '100%', height: 'auto' }} src={fgifView} />
+              <a  style={{ padding: '0.5rem' }} href="https://clepnid.github.io/fgif/">Ir al sitio.</a>
               <h2 style={{ padding: '0.5rem' }}>Aplicación Escritorio Windows</h2>
-              <h1>Abre imagenes animadas con extensión .gif y disfruta viendo como se mueve.</h1>
+              <h1  style={{ padding: '0.5rem' }}>Abre imagenes animadas con extensión .gif y disfruta viendo como se mueve.</h1>
               <p style={{ padding: '0.5rem' }}>Se ha desarrollado una aplicación de escritorio diseñada para embellecer la pantalla del usuario. La imagen elegida se mostrará en la parte superior de todas las ventanas sin interferir con su manipulación, garantizando así una experiencia sin interrupciones. Además, se ofrece la funcionalidad de redimensionar y mover la imagen libremente en la pantalla según las preferencias del usuario. <JavaOriginal className="dev-image" /> <CplusplusOriginal className="dev-image" /></p>
             </div>
           } />
           <WindowComponent title="Un poco sobre mí" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
-              <h1>Antonio Jesús Pavón Correa</h1>
-              <p className="job-title">Ingeniero Software</p>
-              <p className="job-type">Full Stack</p>
-              <p >8 años en este mundillo y desde el primer día me emociona imaginar y crear cualquier cosa.</p>
-              <p >Backend &gt; Frontend</p>
+              <h1  style={{ padding: '0.5rem' }}>Antonio Jesús Pavón Correa</h1>
+              <p  style={{ padding: '0.5rem' }} className="job-title">Ingeniero Software</p>
+              <p  style={{ padding: '0.5rem' }} className="job-type">Full Stack</p>
+              <p  style={{ padding: '0.5rem' }}>8 años en este mundillo y desde el primer día me emociona imaginar y crear cualquier cosa.</p>
+              <p  style={{ padding: '0.5rem' }}>Backend &gt; Frontend</p>
               <div>
-                <Button primary onClick={llamarMetodoVisibilidadClepnid}>Clepnid</Button>
+                <Button style={{ padding: '0.5rem' }} primary onClick={llamarMetodoVisibilidadClepnid}>Clepnid</Button>
               </div>
               <div>
-                <Button primary onClick={llamarMetodoVisibilidadFgif}>Fgif</Button>
+                <Button style={{ padding: '0.5rem' }} primary onClick={llamarMetodoVisibilidadFgif}>Fgif</Button>
               </div>
             </div>
           } />
