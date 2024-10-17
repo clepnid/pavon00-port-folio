@@ -144,6 +144,7 @@ import './components/styles/perfil.css'; // Ruta correcta hacia tu archivo CSS
 import fgifView from './images/fgif-view.gif';
 import clepnidView from './images/clepnid_view.png';
 import complementaryView from './images/Compelementary.png';
+import boletoView from './images/boleto.png';
 import ganaderiappView from './images/ganaderiapp_view.png';
 
 export default function Home() {
@@ -154,6 +155,7 @@ export default function Home() {
   const btnUser = useRef(null);
   const btnGanaderiapp = useRef(null);
   const btnComplementary = useRef(null);
+  const btnCortijo = useRef(null);
   const btnAutobiografia = useRef(null);
 
   useEffect(() => {
@@ -200,6 +202,12 @@ export default function Home() {
     }
   };
 
+  const llamarMetodoVisibilidadCortijo = () => {
+    if (btnFgif.current) {
+      btnCortijo.current.handleOpenClick();
+    }
+  };
+
   const llamarMetodoVisibilidadComplementary = () => {
     if (btnFgif.current) {
       btnComplementary.current.handleOpenClick();
@@ -212,7 +220,7 @@ export default function Home() {
     }
   };
 
-  const arrayOnClicks = [llamarMetodoVisibilidadUser, llamarMetodoVisibilidadFgif, llamarMetodoVisibilidadClepnid, llamarMetodoVisibilidadGanaderiapp, llamarMetodoVisibilidadComplementary];
+  const arrayOnClicks = [llamarMetodoVisibilidadUser, llamarMetodoVisibilidadFgif, llamarMetodoVisibilidadClepnid, llamarMetodoVisibilidadGanaderiapp, llamarMetodoVisibilidadCortijo, llamarMetodoVisibilidadComplementary];
 
   return (
     <>
@@ -274,6 +282,20 @@ export default function Home() {
             </div>
           } />
 
+          <WindowComponentClose ref={btnCortijo} title="Complementary" initialX={100} initialY={100} contenido={
+            <div className="presentation-container">
+              <Image style={{ padding: '0.5rem', maxWidth: '600px', width: '100%', height: 'auto' }} src={boletoView} />
+              <a style={{ padding: '0.5rem' }} href="https://feriacortijo.vercel.app/">Ir al sitio.</a>
+              <h1 style={{ padding: '0.5rem' }}>Escanea el boleto o ve al sitio para introducir el código del boleto</h1>
+              <p style={{ padding: '0.5rem' }}>
+                Durante la feria de mi pueblo, un amigo tenía una caseta y se me ocurrió que podría ofrecer promociones a sus mejores clientes. Él aceptó la idea con entusiasmo.
+              </p>
+              <p style={{ padding: '0.5rem' }}>
+                Desarrollé un sistema para que pudiera editar premios y generar boletos en formato PDF. Aunque al final no hizo mucho uso de la aplicación, ya que los camareros estaban siempre muy ocupados con la barra y no entregaban los boletos, la feria resultó ser un gran éxito para él de todos modos.
+              </p>
+            </div>
+          } />
+
           <WindowComponentClose ref={btnComplementary} title="Complementary" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
               <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={complementaryView} />
@@ -299,6 +321,7 @@ export default function Home() {
               </p>
             </div>
           } />
+
           <WindowComponentClose ref={btnAutobiografia} title="Complementary" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
               <MyPdfPage />
