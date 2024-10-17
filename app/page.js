@@ -252,7 +252,7 @@ export default function Home() {
               <p style={{ padding: '0.5rem' }}>Se ha desarrollado una aplicación de escritorio diseñada para embellecer la pantalla del usuario. La imagen elegida se mostrará en la parte superior de todas las ventanas sin interferir con su manipulación, garantizando así una experiencia sin interrupciones. Además, se ofrece la funcionalidad de redimensionar y mover la imagen libremente en la pantalla según las preferencias del usuario. <JavaOriginal className="dev-image" /> <CplusplusOriginal className="dev-image" /></p>
             </div>
           } />
-          <WindowComponentClose ref={btnUser} title="Fgif" initialX={100} initialY={100} contenido={
+          <WindowComponentClose ref={btnUser} title="Usuario" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
               <h1 style={{ padding: '0.5rem' }}>Antonio Jesús Pavón Correa</h1>
               <p style={{ padding: '0.5rem' }} className="job-title">Ingeniero Software</p>
@@ -282,7 +282,7 @@ export default function Home() {
             </div>
           } />
 
-          <WindowComponentClose ref={btnCortijo} title="Complementary" initialX={100} initialY={100} contenido={
+          <WindowComponentClose ref={btnCortijo} title="Cortijo" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
               <Image style={{ padding: '0.5rem', maxWidth: '600px', width: '100%', height: 'auto' }} src={boletoView} />
               <a style={{ padding: '0.5rem' }} href="https://feriacortijo.vercel.app/">Ir al sitio.</a>
@@ -322,7 +322,7 @@ export default function Home() {
             </div>
           } />
 
-          <WindowComponentClose ref={btnAutobiografia} title="Complementary" initialX={100} initialY={100} contenido={
+          <WindowComponentClose ref={btnAutobiografia} title="Autobiografía" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
               <MyPdfPage />
             </div>
