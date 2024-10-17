@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const PdfViewer = () => {
+  useEffect(() => {
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      // Redirigir a la ruta específica para móviles
+      window.location.href = '/ruta-especifica';
+    }
+  }, []);
+
   return (
     <div style={{ height: 'calc(100vh - 120px)' }}>
       <iframe
