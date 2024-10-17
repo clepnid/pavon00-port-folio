@@ -5,7 +5,7 @@ const PdfViewer = () => {
     const isMobile = /Mobi|Android/i.test(navigator.userAgent);
     if (isMobile) {
       // Redirigir a la ruta específica para móviles
-      window.location.href = '/ruta-especifica';
+      window.location.href = 'https://pavon00-port-folio.vercel.app/autobiografia.pdf';
     }
   }, []);
 

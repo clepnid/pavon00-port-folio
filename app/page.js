@@ -207,7 +207,9 @@ export default function Home() {
   };
 
   const llamarMetodoVisibilidadAutoBiografia = () => {
-    window.location.href = 'https://pavon00-port-folio.vercel.app/autobiografia.pdf';
+    if (btnFgif.current) {
+      btnAutobiografia.current.handleOpenClick();
+    }
   };
 
   const arrayOnClicks = [llamarMetodoVisibilidadUser, llamarMetodoVisibilidadFgif, llamarMetodoVisibilidadClepnid, llamarMetodoVisibilidadGanaderiapp, llamarMetodoVisibilidadComplementary];
