@@ -207,9 +207,7 @@ export default function Home() {
   };
 
   const llamarMetodoVisibilidadAutoBiografia = () => {
-    if (btnFgif.current) {
-      btnAutobiografia.current.handleOpenClick();
-    }
+    window.location.href = 'https://pavon00-port-folio.vercel.app/autobiografia.pdf';
   };
 
   const arrayOnClicks = [llamarMetodoVisibilidadUser, llamarMetodoVisibilidadFgif, llamarMetodoVisibilidadClepnid, llamarMetodoVisibilidadGanaderiapp, llamarMetodoVisibilidadComplementary];
@@ -249,9 +247,9 @@ export default function Home() {
               <h1 style={{ padding: '0.5rem' }}>Antonio Jesús Pavón Correa</h1>
               <p style={{ padding: '0.5rem' }} className="job-title">Ingeniero Software</p>
               <p style={{ padding: '0.5rem' }} className="job-type">Full Stack</p>
-              <p style={{ padding: '0.5rem' }}>Disfruto más de tareas de Backend que de Frontend &rarr; Backend &gt; Frontend</p>
+              <p style={{ padding: '0.5rem' }}>Disfruto más de tareas de Backend que de Frontend &rarr; Backend &gt; Frontend.</p>
               <p style={{ padding: '0.5rem' }}>Dedico todo el tiempo posible a la programación, siempre tengo una nueva idea en mente para desarrollar.</p>
-              <p style={{ padding: '0.5rem' }}>En el escritorio se encuentra disponible un PDF vinculado que contiene mi autobiografía</p>
+              <p style={{ padding: '0.5rem' }}>En el escritorio se encuentra disponible un PDF vinculado que contiene mi autobiografía.</p>
               <p style={{ padding: '0.5rem' }}>Mi objetivo al escribir esta autobiografía es ofrecer una visión transparente de mi trayectoria, para que puedas evaluar si mi experiencia y mis habilidades se alinean con lo que buscas.</p>
             </div>
           } />
