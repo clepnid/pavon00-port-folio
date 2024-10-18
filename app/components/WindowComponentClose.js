@@ -92,7 +92,16 @@ class WindowComponentClose extends Component {
                 onMouseOver={() => this.setState({ isHovered: true })}
                 onMouseOut={() => this.setState({ isHovered: false })}
             >
-                <WindowHeader style={{ fontFamily: 'MS Sans Serif Bold', display: 'flex', justifyContent: 'space-between', paddingRight: 0 }}
+                <WindowHeader style={{ 
+                    position: isMaximized ? 'fixed' : 'unset',
+                    left: isMaximized ? '5px' : '0px',
+                    top: isMaximized ? '1px' : '0px' ,
+                    width: isMaximized ? 'calc(100% - 10px)' : 'auto',
+                    fontFamily: 'MS Sans Serif Bold', 
+                    display: 'flex', 
+                    justifyContent: 'space-between', 
+                    paddingRight: 0 
+                }}
                     onMouseDown={this.handleMouseDown}
                 >
                     {title}

@@ -156,7 +156,22 @@ export default function Home() {
   const btnGanaderiapp = useRef(null);
   const btnComplementary = useRef(null);
   const btnCortijo = useRef(null);
-  const btnAutobiografia = useRef(null);
+  const btnAutobiografia = useRef(null);const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 420);
+    };
+
+    // Check screen size on initial render
+    handleResize();
+
+    // Add event listener for screen resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -226,7 +241,14 @@ export default function Home() {
     <>
       <ThemeProvider theme={theme}>
 
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' }}>
+      <div style={{ 
+          position: isSmallScreen ? 'unset' : 'fixed', 
+          top: 0, 
+          left: 0, 
+          width: '100vw', 
+          height: '100vh',
+          marginBottom: isSmallScreen ? '200px' : '0px'  // Cambia el margen dependiendo del tamaño de la pantalla
+        }}>
           <Escritorio arrayOnClicks={arrayOnClicks} />
           <Autobiografia funcionBoton={llamarMetodoVisibilidadAutoBiografia} />
         </div>

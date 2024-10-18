@@ -1,0 +1,26 @@
+.app-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 8px;
+  }
+  
+  .app-bar-button, .app-bar-email, .app-bar-clock {
+    font-family: 'MS Sans Serif';
+    padding: 0 8px;
+  }
+  
+  
+  /* Para pantallas muy pequeñas */
+  @media (max-width: 420px) {
+    .app-bar-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .app-bar-button, .app-bar-email, .app-bar-clock {
+      text-align: center;
+    }
+  }
+  
