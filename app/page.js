@@ -146,6 +146,7 @@ import clepnidView from './images/clepnid_view.png';
 import complementaryView from './images/Compelementary.png';
 import boletoView from './images/boleto.png';
 import ganaderiappView from './images/ganaderiapp_view.png';
+import Head from "next/head";
 
 export default function Home() {
   const [theme, setTheme] = useState(white); // Estado para el tema actual
@@ -156,7 +157,7 @@ export default function Home() {
   const btnGanaderiapp = useRef(null);
   const btnComplementary = useRef(null);
   const btnCortijo = useRef(null);
-  const btnAutobiografia = useRef(null);const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const btnAutobiografia = useRef(null); const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -239,13 +240,17 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <meta property="og:image" content="https://pavon00-port-folio.vercel.app/img.png" />
+      </Head>
+
       <ThemeProvider theme={theme}>
 
-      <div style={{ 
-          position: isSmallScreen ? 'unset' : 'fixed', 
-          top: 0, 
-          left: 0, 
-          width: '100vw', 
+        <div style={{
+          position: isSmallScreen ? 'unset' : 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
           height: '100vh',
           marginBottom: isSmallScreen ? '200px' : '0px'  // Cambia el margen dependiendo del tamaño de la pantalla
         }}>
