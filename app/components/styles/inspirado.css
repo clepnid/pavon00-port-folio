@@ -1,0 +1,39 @@
+.inspirado_container {
+    width: 100%;
+    float: inline-end;
+}
+
+.inspirado_image {
+    max-width: 70px;
+    float: right;
+    margin-right: 10px;
+}
+
+/* Para pantallas grandes */
+.large_screen {
+    max-width: 70px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 55px;
+}
+
+/* Para pantallas pequeñas */
+.small_screen {
+    position: static;
+    margin-bottom: 0px;
+}
+
+.inspirado_image_margin {
+    padding-top: 10px;
+    margin-bottom: 63px;
+}
+
+/* Estilo para la imagen en pantallas pequeñas */
+@media (max-width: 420px) {
+    .inspirado_image {
+        max-width: 70px;
+        float: right;
+        margin-right: 10px;
+    }
+}

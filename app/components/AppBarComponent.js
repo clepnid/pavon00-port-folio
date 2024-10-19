@@ -12,7 +12,7 @@ class AppBarComponent extends Component {
     return (
       <AppBar style={{ bottom: 0, top: 'unset' }}>
         <div className="app-bar-container">
-        <Button style={{ padding: '8 0px', fontFamily: 'MS Sans Serif' }} primary onClick={funcionBoton}>{themeChanger ? 'Parar Cambio Tema Automático' : 'Cambiar Tema'}</Button>
+        <Button style={{ margin: '3px', padding: '8 0px', fontFamily: 'MS Sans Serif' }} primary onClick={funcionBoton}>{themeChanger ? 'Parar Cambio Tema Automático' : 'Cambiar Tema'}</Button>
           <Separator orientation='vertical' className="app-bar-separator" />
           <div className="app-bar-email">ilovepavon@gmail.com</div>
           <Separator orientation='vertical' className="app-bar-separator" />

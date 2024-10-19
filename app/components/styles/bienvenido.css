@@ -1,0 +1,5 @@
+.bienvenido_container {
+    min-height: 360px;
+    width: 100%;
+    border: 2px solid black; /* Añade un borde negro de 2px */
+}

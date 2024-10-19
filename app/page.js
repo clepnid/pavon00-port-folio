@@ -139,6 +139,8 @@ const themes = [
 
 
 import AppBarComponent from './components/AppBarComponent';
+import Inspirado from './components/Inspirado';
+import Bienvenido from './components/Bienvenido';
 import { JavaOriginal, JavascriptOriginal, ReactOriginal, BashOriginal, CplusplusOriginal, NodejsOriginal, MysqlOriginal, ExpressOriginal } from 'devicons-react';
 import './components/styles/perfil.css'; // Ruta correcta hacia tu archivo CSS
 import fgifView from './images/fgif-view.gif';
@@ -146,6 +148,7 @@ import clepnidView from './images/clepnid_view.png';
 import complementaryView from './images/Compelementary.png';
 import boletoView from './images/boleto.png';
 import ganaderiappView from './images/ganaderiapp_view.png';
+import { ClippyProvider } from "@react95/clippy";
 
 export default function Home() {
   const [theme, setTheme] = useState(white); // Estado para el tema actual
@@ -156,11 +159,14 @@ export default function Home() {
   const btnGanaderiapp = useRef(null);
   const btnComplementary = useRef(null);
   const btnCortijo = useRef(null);
-  const btnAutobiografia = useRef(null);const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const btnAutobiografia = useRef(null);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isSmallHeight, setIsSmallHeight] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 420);
+      setIsSmallHeight(window.innerHeight <= 540);
     };
 
     // Check screen size on initial render
@@ -206,31 +212,31 @@ export default function Home() {
   };
 
   const llamarMetodoVisibilidadUser = () => {
-    if (btnFgif.current) {
+    if (btnUser.current) {
       btnUser.current.handleOpenClick();
     }
   };
 
   const llamarMetodoVisibilidadGanaderiapp = () => {
-    if (btnFgif.current) {
+    if (btnGanaderiapp.current) {
       btnGanaderiapp.current.handleOpenClick();
     }
   };
 
   const llamarMetodoVisibilidadCortijo = () => {
-    if (btnFgif.current) {
+    if (btnCortijo.current) {
       btnCortijo.current.handleOpenClick();
     }
   };
 
   const llamarMetodoVisibilidadComplementary = () => {
-    if (btnFgif.current) {
+    if (btnComplementary.current) {
       btnComplementary.current.handleOpenClick();
     }
   };
 
   const llamarMetodoVisibilidadAutoBiografia = () => {
-    if (btnFgif.current) {
+    if (btnAutobiografia.current) {
       btnAutobiografia.current.handleOpenClick();
     }
   };
@@ -241,18 +247,38 @@ export default function Home() {
     <>
       <ThemeProvider theme={theme}>
 
-      <div style={{ 
-          position: isSmallScreen ? 'unset' : 'fixed', 
-          top: 0, 
-          left: 0, 
-          width: '100vw', 
-          height: '100vh',
-          marginBottom: isSmallScreen ? '200px' : '0px'  // Cambia el margen dependiendo del tamaño de la pantalla
+        <div style={{
+          position: isSmallScreen ? 'unset' : 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: (isSmallScreen || isSmallHeight) ? '100%' : '100vh',
+          marginBottom: (isSmallScreen || isSmallHeight) ? '100px' : '0px',
+          overflow: (isSmallScreen || isSmallHeight) ? 'scroll' : 'hidden',
         }}>
-          <Escritorio arrayOnClicks={arrayOnClicks} />
-          <Autobiografia funcionBoton={llamarMetodoVisibilidadAutoBiografia} />
+          <div>
+
+            <div style={{
+              width: '100%',
+              maxWidth: '740px',
+              float: 'left'
+            }}>
+              <Escritorio arrayOnClicks={arrayOnClicks} />
+              <Autobiografia funcionBoton={llamarMetodoVisibilidadAutoBiografia} />
+            </div>
+            <div style={{
+              width: '100%',
+              maxWidth: '740px',
+              float: 'right'
+            }}>
+              <ClippyProvider>
+                <Bienvenido />
+              </ClippyProvider>
+              <Inspirado isSmallScreen={isSmallScreen} isSmallHeight={isSmallHeight} />
+            </div>
+          </div>
         </div>
-        <div>
+        <div> 
           <WindowComponentClose ref={btnClepnid} title="Clepnid" initialX={150} initialY={150} contenido={
             <div className="presentation-container">
               <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={clepnidView} />

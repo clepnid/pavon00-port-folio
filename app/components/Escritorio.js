@@ -1,12 +1,12 @@
 // Escritorio.js
 import React from 'react';
 import IconoEscritorio from './IconoEscritorio';
-import fgifIcon from './../images/fgif.gif'
-import clepnidIcon from './../images/clepnid.png'
-import reactIcon from './../images/react.png'
-import userIcon from './../images/user.png'
-import cortijoIcon from './../images/cortijo.png'
-import ganaderiappIcon from './../images/ganaderiapp.png'
+import fgifIcon from './../images/fgif.gif';
+import clepnidIcon from './../images/clepnid.png';
+import reactIcon from './../images/react.png';
+import userIcon from './../images/user.png';
+import cortijoIcon from './../images/cortijo.png';
+import ganaderiappIcon from './../images/ganaderiapp.png';
 import './styles/escritorio.css';
 import './styles/fuentes.css'; 
 

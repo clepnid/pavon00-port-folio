@@ -49,11 +49,12 @@ const IconoEscritorio = React.memo(({ id, nombre, imagen, pixeles, onClick }) =>
                             src={imagen}
                             pixelSize={pixeles}
                             transparency={true}
-                            width={100}
-                            height={100}
+                            width={200}
+                            height={200}
                             onIsLoad={(base64) => {
                                 saveDataToLocalStorage(id, base64);
                             }}
+                            
                         />
                     )
                 )
