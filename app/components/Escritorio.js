@@ -12,19 +12,19 @@ import './styles/fuentes.css';
 
 const Escritorio = ({arrayOnClicks}) => {
   const listaDeIconos = [
-    { nombre: 'Antonio Jesus Pavon Correa', imagen: userIcon.src},
-    { nombre: 'Fgif', imagen: fgifIcon.src},
-    { nombre: 'Clepnid', imagen: clepnidIcon.src},
-    { nombre: 'Ganaderiapp', imagen: ganaderiappIcon.src},
-    { nombre: 'Cortijo', imagen: cortijoIcon.src},
-    { nombre: 'Complementary', imagen: reactIcon.src},
+    {id: '399332302', nombre: 'Antonio Jesus Pavon Correa', imagen: userIcon.src, pixeles: 0},
+    {id: '399093302', nombre: 'Fgif', imagen: fgifIcon.src, pixeles: 3},
+    {id: '395332302', nombre: 'Clepnid', imagen: clepnidIcon.src, pixeles: 3},
+    {id: '399323202', nombre: 'Ganaderiapp', imagen: ganaderiappIcon.src, pixeles: 3},
+    {id: '393232302', nombre: 'Cortijo', imagen: cortijoIcon.src, pixeles: 2},
+    {id: '395392302', nombre: 'Complementary', imagen: reactIcon.src, pixeles: 2},
     // Agrega más iconos según sea necesario
   ];
 
   return (
     <div className='escritorio'>
       {listaDeIconos.map((icono, index) => (
-        <IconoEscritorio key={index} nombre={icono.nombre} imagen={icono.imagen} onClick={arrayOnClicks[index]} />
+        <IconoEscritorio key={index} id={icono.id} nombre={icono.nombre} imagen={icono.imagen} pixeles={icono.pixeles} onClick={arrayOnClicks[index]} />
       ))}
     </div>
   );
