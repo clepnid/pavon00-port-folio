@@ -1,37 +1,38 @@
-// IconoEscritorio.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/escritorio.css';
 import './styles/fuentes.css';
 import Pixelify from './Pixelify';
 
 const IconoEscritorio = React.memo(({ id, nombre, imagen, pixeles, onClick }) => {
 
-    // Función para verificar si un nombre está en localStorage
-    function isNameInLocalStorage(name) {
-        return localStorage.getItem(name) !== null;
-    }
+    const [savedImage, setSavedImage] = useState(null);
 
     // Función para guardar un dato en localStorage con un nombre
     function saveDataToLocalStorage(name, data) {
         localStorage.setItem(name, data);
     }
 
-    // Función para obtener un dato en localStorage con un nombre
+    // Función para obtener un dato de localStorage con un nombre
     function getNameInLocalStorage(name) {
         return localStorage.getItem(name);
     }
 
+    useEffect(() => {
+        // Cargar imagen desde localStorage cuando el componente se monta
+        const savedImage = getNameInLocalStorage(id);
+        if (savedImage) {
+            setSavedImage(savedImage);
+        }
+    }, [id]); // Dependencia en `id`, para ejecutar cuando cambia
+
     const handleMouseOver = (e) => {
-        e.currentTarget.style.transform = 'scale(1.1)'; // Aumenta el tamaño al pasar el ratón
-        e.currentTarget.style.transition = 'transform 0.3s'; // Añade una transición suave
+        e.currentTarget.style.transform = 'scale(1.1)';
+        e.currentTarget.style.transition = 'transform 0.3s';
     };
 
     const handleMouseOut = (e) => {
-        e.currentTarget.style.transform = 'scale(1)'; // Vuelve al tamaño original
+        e.currentTarget.style.transform = 'scale(1)';
     };
-
-    // Verifica si hay una imagen guardada en localStorage
-    const savedImage = getNameInLocalStorage(id);
 
     return (
         <div className='icono'
@@ -53,8 +54,8 @@ const IconoEscritorio = React.memo(({ id, nombre, imagen, pixeles, onClick }) =>
                             height={200}
                             onIsLoad={(base64) => {
                                 saveDataToLocalStorage(id, base64);
+                                setSavedImage(base64); // Actualiza el estado con la imagen base64
                             }}
-                            
                         />
                     )
                 )
