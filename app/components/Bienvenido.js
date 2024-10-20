@@ -11,4 +11,4 @@ const Bienvenido = () => {
   );
 };
 
-export default Bienvenido; 
+export default React.memo(Bienvenido);
