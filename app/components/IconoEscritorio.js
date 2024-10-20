@@ -3,7 +3,7 @@ import './styles/escritorio.css';
 import './styles/fuentes.css';
 import Pixelify from './Pixelify';
 
-const IconoEscritorio = React.memo(({ id, nombre, imagen, pixeles, onClick }) => {
+const IconoEscritorio = ({ id, nombre, imagen, pixeles, onClick }) => {
 
     const [savedImage, setSavedImage] = useState(null);
 
@@ -68,6 +68,6 @@ const IconoEscritorio = React.memo(({ id, nombre, imagen, pixeles, onClick }) =>
             <p className='iconoNombre'>{nombre}</p>
         </div>
     );
-});
+};
 
 export default IconoEscritorio;
