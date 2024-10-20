@@ -140,7 +140,6 @@ const themes = [
 
 import AppBarComponent from './components/AppBarComponent';
 import Inspirado from './components/Inspirado';
-import Bienvenido from './components/Bienvenido';
 import { JavaOriginal, JavascriptOriginal, ReactOriginal, BashOriginal, CplusplusOriginal, NodejsOriginal, MysqlOriginal, ExpressOriginal } from 'devicons-react';
 import './components/styles/perfil.css'; // Ruta correcta hacia tu archivo CSS
 import fgifView from './images/fgif-view.gif';
@@ -148,7 +147,6 @@ import clepnidView from './images/clepnid_view.png';
 import complementaryView from './images/Compelementary.png';
 import boletoView from './images/boleto.png';
 import ganaderiappView from './images/ganaderiapp_view.png';
-import { ClippyProvider } from "@react95/clippy";
 
 export default function Home() {
   const [theme, setTheme] = useState(white); // Estado para el tema actual
@@ -271,9 +269,6 @@ export default function Home() {
               maxWidth: '740px',
               float: 'right'
             }}>
-              <ClippyProvider>
-                <Bienvenido />
-              </ClippyProvider>
               <Inspirado isSmallScreen={isSmallScreen} isSmallHeight={isSmallHeight} />
             </div>
           </div>
