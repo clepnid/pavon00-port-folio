@@ -22,28 +22,24 @@ class Pixelify extends Component {
 
     // una vez que la imagen está cargada
     img.onload = () => {
-      // Hack para mejorar el rendimiento de clipping en Firefox
-      const originalClip = CanvasRenderingContext2D.prototype.clip;
-      CanvasRenderingContext2D.prototype.clip = function () { };
       const canvas = this.canvas;
-      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      if (canvas) {
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
 
-      // Ajustar el tamaño de la imagen y del canvas
-      img.width = width ? width : img.width;
-      img.height = height ? height : img.height;
-      canvas.width = img.width;
-      canvas.height = img.height;
+        // Ajustar el tamaño de la imagen y del canvas
+        img.width = width ? width : img.width;
+        img.height = height ? height : img.height;
+        canvas.width = img.width;
+        canvas.height = img.height;
 
 
-      // Pintar la imagen en el canvas
-      ctx.drawImage(img, 0, 0, width, img.height);
+        // Pintar la imagen en el canvas
+        ctx.drawImage(img, 0, 0, width, img.height);
 
-      // Restaurar la función original de clip
-      CanvasRenderingContext2D.prototype.clip = originalClip;
-
-      this.paintPixels(ctx, img, pixelSize, centered, fillTransparencyColor);
-      onIsLoad(canvas.toDataURL());
-      img = null;
+        this.paintPixels(ctx, img, pixelSize, centered, fillTransparencyColor);
+        onIsLoad(canvas.toDataURL());
+        img = null;
+      }
     };
   }
 
@@ -115,7 +111,7 @@ Pixelify.propTypes = {
   height: PropTypes.number,
   centered: PropTypes.bool,
   fillTransparencyColor: PropTypes.string,
-  transparency: PropTypes.bool, 
+  transparency: PropTypes.bool,
   onIsLoad: PropTypes.func,
 };
 
@@ -123,7 +119,7 @@ Pixelify.defaultProps = {
   centered: false,
   fillTransparencyColor: "white",
   transparency: false, // Valor por defecto para transparencia
-  onIsLoad: () => {},
+  onIsLoad: () => { },
 };
 
 export default Pixelify;

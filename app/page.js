@@ -140,6 +140,7 @@ const themes = [
 
 import AppBarComponent from './components/AppBarComponent';
 import Inspirado from './components/Inspirado';
+import Bienvenido from './components/Bienvenido';
 import { JavaOriginal, JavascriptOriginal, ReactOriginal, BashOriginal, CplusplusOriginal, NodejsOriginal, MysqlOriginal, ExpressOriginal } from 'devicons-react';
 import './components/styles/perfil.css'; // Ruta correcta hacia tu archivo CSS
 import fgifView from './images/fgif-view.gif';
@@ -163,8 +164,8 @@ export default function Home() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 420);
-      setIsSmallHeight(window.innerHeight <= 540);
+      setIsSmallScreen(window.innerWidth <= 1100);
+      setIsSmallHeight(window.innerHeight <= 560);
     };
 
     // Check screen size on initial render
@@ -254,26 +255,35 @@ export default function Home() {
           marginBottom: (isSmallScreen || isSmallHeight) ? '100px' : '0px',
           overflow: (isSmallScreen || isSmallHeight) ? 'scroll' : 'hidden',
         }}>
-          <div>
-
+          <div style={{
+            display: 'flex',
+            flexDirection: (isSmallScreen || isSmallHeight) ? 'column' : 'row', // Cambia a columna si la pantalla es pequeña
+            flexWrap: (isSmallScreen || isSmallHeight) ? 'wrap' : 'nowrap',
+            justifyContent: 'space-between',
+            maxWidth: '100%',
+            alignItems: (isSmallScreen || isSmallHeight) ? 'center' : 'flex-start',
+          }}>
             <div style={{
-              width: '100%',
+              flex: '1 1 100%', // Se ajusta al 100% en pantallas pequeñas
+              minWidth: '320px',
               maxWidth: '740px',
-              float: 'left'
             }}>
               <Escritorio arrayOnClicks={arrayOnClicks} />
               <Autobiografia funcionBoton={llamarMetodoVisibilidadAutoBiografia} />
             </div>
             <div style={{
-              width: '100%',
+              flex: '1 1 100%', // Se ajusta al 100% en pantallas pequeñas
               maxWidth: '740px',
-              float: 'right'
+              width: '100%',
             }}>
+              <Bienvenido />
               <Inspirado isSmallScreen={isSmallScreen} isSmallHeight={isSmallHeight} />
             </div>
           </div>
+
+
         </div>
-        <div> 
+        <div>
           <WindowComponentClose ref={btnClepnid} title="Clepnid" initialX={150} initialY={150} contenido={
             <div className="presentation-container">
               <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={clepnidView} />
@@ -298,7 +308,7 @@ export default function Home() {
           <WindowComponentClose ref={btnUser} title="Usuario" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
               <h1 style={{ padding: '0.5rem' }}>Antonio Jesús Pavón Correa</h1>
-              <p style={{ padding: '0.5rem' }} className="job-title">Ingeniero Software</p>
+              <p style={{ padding: '0.5rem' }} className="job-title">Ingeniero Software - España</p>
               <p style={{ padding: '0.5rem' }} className="job-type">Full Stack</p>
               <p style={{ padding: '0.5rem' }}>Disfruto más de tareas de Backend que de Frontend &rarr; Backend &gt; Frontend.</p>
               <p style={{ padding: '0.5rem' }}>Dedico todo el tiempo posible a la programación, siempre tengo una nueva idea en mente para desarrollar.</p>

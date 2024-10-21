@@ -1,0 +1,25 @@
+.boton-link {
+    display: inline-flex;
+    /* Asegúrate de que sea un bloque en línea */
+    align-items: center;
+    /* Centra el contenido verticalmente */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    background-color: #007bff;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    padding: 10px;
+    /* Espaciado interno */
+    text-decoration: none;
+    /* Sin subrayado */
+    transition: background-color 0.3s;
+    /* Efecto de transición */
+}
+
+.boton-link:hover {
+    background-color: #a1d5fd;
+    /* Color al pasar el ratón */
+}

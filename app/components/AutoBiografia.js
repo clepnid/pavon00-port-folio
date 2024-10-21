@@ -11,7 +11,6 @@ const AutoBiografia = ({funcionBoton}) => {
                 <p className='tituloAutobiografia'>Autobiografía</p>
                 <p className='tiempoAutobiografia'>Tiempo de lectura: 5min</p>
                 <p className='descripcionAutobiografia'>Un libro corto, me he dado cuenta de que soy joven (24 años).</p>
-                {/* Botón añadido */}
                 <Button style={{fontFamily: 'MS Sans Serif'}} className='botonLeer' onClick={funcionBoton}>Leer</Button>
             </div>
             <img src={autobiografiaIcon.src} alt={'autobiografia'} className='iconoAutobiografia' />
