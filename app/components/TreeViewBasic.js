@@ -32,11 +32,15 @@ const categories = [
     items: [
       {
         id: 'action-games',
-        label: 'Un juego metroidvania en el que la progresión se da ',
+        label: 'Un juego metroidvania en',
         icon: <>⚔️</>
       },
       {
         id: 'action-games2',
+        label: 'el que la progresión se da'
+      },
+      {
+        id: 'action-games3',
         label: 'cumpliendo retos'
       }
     ]
@@ -48,12 +52,16 @@ const categories = [
     items: [
       {
         id: 'lighting',
-        label: 'Dar interfaz en Internet a un repetidor de',
+        label: 'Dar interfaz en Internet',
         icon: <>💡</>
       },
       {
         id: 'lighting2',
-        label: ' señal, infrarrojo, Bluetooth, Wi-Fi'
+        label: 'a un repetidor de señal,'
+      },
+      {
+        id: 'lighting2',
+        label: 'infrarrojo, Bluetooth, Wi-Fi'
       }
     ]
   }

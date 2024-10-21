@@ -6,7 +6,7 @@ import './styles/fuentes.css';
 import './styles/frame.css';
 
 const Wrapper = styled.div`
-  padding: 1rem;
+  padding: 15px;
   float: right;
   
   #default-buttons button {
@@ -27,7 +27,7 @@ const FrameComponent = () => {
             <Frame
                 variant='outside'
                 shadow
-                style={{ padding: '0.5rem', lineHeight: '1.5', width: 600 }}
+                style={{lineHeight: '1.5', width: '100%' }}
             >
                 <p style={{ padding: '0.5rem', fontFamily: 'MS Sans Serif' }}>
                     Hola y bienvenidos a mi portfolio.
@@ -37,7 +37,7 @@ const FrameComponent = () => {
                     <br />
                     <TreeViewBasic />
                 </Frame>
-                <div style={{ display: 'inline-flex' }}>
+                <div style={{ display: 'inline-flex', marginLeft: '10px',  marginBottom: '10px' }}>
 
                     <Avatar
                         className='boton-link'

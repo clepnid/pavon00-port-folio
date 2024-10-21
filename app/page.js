@@ -253,7 +253,7 @@ export default function Home() {
           width: '100vw',
           height: (isSmallScreen || isSmallHeight) ? '100%' : '100vh',
           marginBottom: (isSmallScreen || isSmallHeight) ? '100px' : '0px',
-          overflow: (isSmallScreen || isSmallHeight) ? 'scroll' : 'hidden',
+          overflow: (isSmallScreen || isSmallHeight) ? 'auto' : 'hidden',
         }}>
           <div style={{
             display: 'flex',
@@ -273,8 +273,8 @@ export default function Home() {
             </div>
             <div style={{
               flex: '1 1 100%', // Se ajusta al 100% en pantallas pequeñas
-              maxWidth: '740px',
-              width: '100%',
+              maxWidth: '98vw',
+              width: '740px',
             }}>
               <Bienvenido />
               <Inspirado isSmallScreen={isSmallScreen} isSmallHeight={isSmallHeight} />
