@@ -33,7 +33,7 @@ const FrameComponent = () => {
                     Hola y bienvenidos a mi portfolio.
                 </p>
                 <Frame variant='inside' style={{ margin: '1rem', padding: '1rem', width: '94%', fontFamily: 'MS Sans Serif' }}>
-                    Al terminar el desarrollo de Ganaderiapp me gustaría realizar:
+                    Ideas pendientes de desarrollar:
                     <br />
                     <TreeViewBasic />
                 </Frame>

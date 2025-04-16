@@ -146,6 +146,13 @@ import './components/styles/perfil.css'; // Ruta correcta hacia tu archivo CSS
 import fgifView from './images/fgif-view.gif';
 import clepnidView from './images/clepnid_view.png';
 import complementaryView from './images/Compelementary.png';
+import fotos365View1 from './images/fotos365.gif';
+import fotos365View2 from './images/fotos365_1.gif';
+import controlView1 from './images/control_1.png';
+import controlView2 from './images/control_2.png';
+import controlView3 from './images/control_3.png';
+import controlView4 from './images/control_4.png';
+import controlView5 from './images/control.gif';
 import boletoView from './images/boleto.png';
 import ganaderiappView from './images/ganaderiapp_view.png';
 
@@ -156,6 +163,8 @@ export default function Home() {
   const btnFgif = useRef(null);
   const btnUser = useRef(null);
   const btnGanaderiapp = useRef(null);
+  const btnSdsControl = useRef(null);
+  const btnFotos365 = useRef(null);
   const btnComplementary = useRef(null);
   const btnCortijo = useRef(null);
   const btnAutobiografia = useRef(null);
@@ -234,13 +243,25 @@ export default function Home() {
     }
   };
 
+  const llamarMetodoVisibilidadControl = () => {
+    if (btnSdsControl.current) {
+      btnSdsControl.current.handleOpenClick();
+    }
+  };
+
+  const llamarMetodoVisibilidadFotos365 = () => {
+    if (btnFotos365.current) {
+      btnFotos365.current.handleOpenClick();
+    }
+  };
+
   const llamarMetodoVisibilidadAutoBiografia = () => {
     if (btnAutobiografia.current) {
       btnAutobiografia.current.handleOpenClick();
     }
   };
 
-  const arrayOnClicks = [llamarMetodoVisibilidadUser, llamarMetodoVisibilidadFgif, llamarMetodoVisibilidadClepnid, llamarMetodoVisibilidadGanaderiapp, llamarMetodoVisibilidadCortijo, llamarMetodoVisibilidadComplementary];
+  const arrayOnClicks = [llamarMetodoVisibilidadUser, llamarMetodoVisibilidadFgif, llamarMetodoVisibilidadClepnid, llamarMetodoVisibilidadGanaderiapp, llamarMetodoVisibilidadCortijo, llamarMetodoVisibilidadComplementary, llamarMetodoVisibilidadControl, llamarMetodoVisibilidadFotos365];
 
   return (
     <>
@@ -288,21 +309,28 @@ export default function Home() {
             <div className="presentation-container">
               <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={clepnidView} />
               <a style={{ padding: '0.5rem' }} href="https://clepnid-doc.vercel.app/">Ir al sitio.</a>
+              <p style={{ padding: '0.5rem' }}>Desarrollado desde 2020 - 2024</p>
               <h2 style={{ padding: '0.5rem' }}>Aplicación Escritorio Windows, Linux, MacOs</h2>
-              <h1 style={{ padding: '0.5rem' }}>Cliente/Servidor dinámico trabajando en dos modos a la vez: </h1>
-              <h3 style={{ padding: '0.5rem' }}>Local</h3>
-              <p style={{ padding: '0.5rem' }}>Con solo presionar algunas teclas, nuestra aplicación permite simular las acciones de copiar y pegar del portapapeles, facilitando así el intercambio de archivos, imágenes y texto entre dispositivos conectados a la misma red.<JavaOriginal className="dev-image" /></p>
-              <h3 style={{ padding: '0.5rem' }}>Web</h3>
-              <p style={{ padding: '0.5rem' }}>Nuestra plataforma ofrece acceso web a los diversos elementos compartidos en red, centrándose en la interacción a través de páginas web modulares para archivos, que permiten reproducir, editar, descargar, y más. <JavascriptOriginal className="dev-image" />    <ReactOriginal className="dev-image" />Además, integra un sistema de backend espejo para redirigir a otros servicios web en diferentes puertos. <BashOriginal className="dev-image" /></p>
+              <p style={{ padding: '0.5rem' }}>La segunda idea que tuve surgió de estar tan acostumbrado a copiar y pegar. Un día, en clase, intenté copiar algo desde el ordenador de un compañero y pegarlo en el mío. No funcionó... y de ahí nació la idea.</p>
+              <p style={{ padding: '0.5rem' }}>
+                Los primeros meses de desarrollo me sirvieron para aprender a ser autodidacta. En varios aspectos, sentaron las bases de lo que soy ahora como programador. Si necesitaba incorporar una nueva función, buscaba hasta dar con la manera de implementarla.
+                Este programa tiene mucha historia detrás. Al principio, era una herramienta de red que escuchaba puertos y compartía el contenido del portapapeles al pulsar una combinación de teclas. Me sirvió como trabajo de fin de grado superior. Al año siguiente lo usé de forma más seria, pero como daba algunos errores, tuve que refactorizarlo y mejorarlo desde cero, ya que la base de código era muy pobre debido a mi poca experiencia como desarrollador.
+                En esa fase de mejoras, añadí una interfaz web y la gestión de usuarios. Un año después, ya en segundo de carrera, me vi en la necesidad de integrar aplicaciones web a los archivos compartidos por el sistema. Esto dio como resultado una aplicación completamente distinta a la planteada originalmente, con tiempos de desarrollo bastante largos.
+                Con decir que, a día de hoy, cada vez que veo esa aplicación me dan ganas de seguir mejorándola... pero claro, siempre hay otras cosas que hacer.
+              </p>
             </div>
           } />
           <WindowComponentClose ref={btnFgif} title="Fgif" initialX={150} initialY={150} contenido={
             <div className="presentation-container">
               <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={fgifView} />
               <a style={{ padding: '0.5rem' }} href="https://clepnid.github.io/fgif/">Ir al sitio.</a>
+              <p style={{ padding: '0.5rem' }}>Creado en 2019</p>
               <h2 style={{ padding: '0.5rem' }}>Aplicación Escritorio Windows</h2>
-              <h1 style={{ padding: '0.5rem' }}>Abre imagenes animadas con extensión .gif y disfruta viendo como se mueve.</h1>
-              <p style={{ padding: '0.5rem' }}>Se ha desarrollado una aplicación de escritorio diseñada para embellecer la pantalla del usuario. La imagen elegida se mostrará en la parte superior de todas las ventanas sin interferir con su manipulación, garantizando así una experiencia sin interrupciones. Además, se ofrece la funcionalidad de redimensionar y mover la imagen libremente en la pantalla según las preferencias del usuario. <JavaOriginal className="dev-image" /> <CplusplusOriginal className="dev-image" /></p>
+              <h1 style={{ padding: '0.5rem' }}>Abre imagenes animadas con extensión .gif y decora tu pantalla.</h1>
+              <p style={{ padding: '0.5rem' }}>
+                Mientras estudiaba, tuve mi primera idea de aplicación: que además de personalizar el fondo con fondos animados, se pudiese personalizar el frente con algo animado. La hice lastrado por la tecnología que estaba aprendiendo: Java. Me limité a realizar una aplicación de escritorio y desarrollé mi primera biblioteca visual, solo con botones, con resize al aumentar o reducir la ventana, y con una opción para cambiar el idioma de estos.
+                Lo que desarrollé fue un componente de ventana, conteniendo un gif elegido por el usuario, que estuviese encima de todo y que fuera transparente a los eventos, ya fuesen de ratón o de teclas, pasando estos eventos a la ventana detrás de la animación. En ese entonces, solo fui capaz de realizarlo en Windows; probé en Linux sin éxito, así que procedí a empaquetarlo con Inno Setup y di por terminado el desarrollo.
+                Es una pena, pero perdí el código al formatear mi ordenador, quedándome solo con el instalador.</p>
             </div>
           } />
           <WindowComponentClose ref={btnUser} title="Usuario" initialX={100} initialY={100} contenido={
@@ -310,7 +338,8 @@ export default function Home() {
               <h1 style={{ padding: '0.5rem' }}>Antonio Jesús Pavón Correa</h1>
               <p style={{ padding: '0.5rem' }} className="job-title">Ingeniero Software - España</p>
               <p style={{ padding: '0.5rem' }} className="job-type">Full Stack</p>
-              <p style={{ padding: '0.5rem' }}>Disfruto más de tareas de Backend que de Frontend &rarr; Backend &gt; Frontend.</p>
+              <p style={{ padding: '0.5rem' }}>Actualizado el 16/04/2025.</p>
+              <p style={{ padding: '0.5rem' }}>He creado un ícono que despliega una ventana para explicar cada aplicación que he desarrollado.</p>
               <p style={{ padding: '0.5rem' }}>Dedico todo el tiempo posible a la programación, siempre tengo una nueva idea en mente para desarrollar.</p>
               <p style={{ padding: '0.5rem' }}>En el escritorio se encuentra disponible un PDF vinculado que contiene mi autobiografía.</p>
               <p style={{ padding: '0.5rem' }}>Mi objetivo al escribir esta autobiografía es ofrecer una visión transparente de mi trayectoria, para que puedas evaluar si mi experiencia y mis habilidades se alinean con lo que buscas.</p>
@@ -320,10 +349,11 @@ export default function Home() {
             <div className="presentation-container">
               <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={ganaderiappView} />
               <a style={{ padding: '0.5rem' }} href="https://ganaderiaapp.vercel.app/">Ir al sitio.</a>
-              <h1 style={{ padding: '0.5rem' }}>¿Estás buscando una forma más fácil y eficiente de gestionar tu explotación ganadera?</h1>
-              <p style={{ padding: '0.5rem' }}><span class="highlight">¡Nuestra aplicación está diseñada para ti!</span> Inspirada en las necesidades reales de ganaderos ovino-caprinos, esta herramienta intuitiva facilita la gestión integral de tu rebaño con la última tecnología.</p>
+              <p style={{ padding: '0.5rem' }}>Desarrollado desde 2024 - 2025</p>
+              <h2 style={{ padding: '0.5rem' }}>Aplicación Web</h2>
+              <p style={{ padding: '0.5rem' }}>Mis suegros tienen una ganadería, y como no encontraban una aplicación que les gustara, me puse a investigar sobre los problemas que enfrentan los ganaderos. A partir de ahí, decidí desarrollar una aplicación para facilitarles un poco la vida.</p>
 
-              <p style={{ padding: '0.5rem' }}>Con nuestra aplicación, podrás:</p>
+              <p style={{ padding: '0.5rem' }}>Funciones de la aplicación:</p>
               <ul style={{ padding: '0.5rem' }}>
                 <li style={{ padding: '0.5rem' }}><span class="highlight">Tener trazabilidad total de cada animal</span>, usando escáneres Bluetooth y tecnología OCR para identificar cotrales electrónicos de forma rápida y precisa.</li>
                 <li style={{ padding: '0.5rem' }}><span class="highlight">Monitorear el rendimiento</span> y estado del ganado a través de análisis y estadísticas que te permitirán tomar decisiones informadas.</li>
@@ -331,7 +361,7 @@ export default function Home() {
                 <li style={{ padding: '0.5rem' }}><span class="highlight">Optimizar tus tareas diarias</span>, con herramientas de planificación que te ayudarán a ahorrar tiempo y mejorar la productividad.</li>
               </ul>
 
-              <p style={{ padding: '0.5rem' }}>Este proyecto ha sido desarrollado con pasión, después de escuchar las necesidades de los ganaderos como tú. No es solo una aplicación más, es una solución hecha a medida que transformará la manera en que gestionas tu negocio. <span class="highlight">¡Di adiós a las tediosas tareas administrativas y descubre una forma más ágil y entretenida de llevar tu ganadería al siguiente nivel!</span></p>
+              <p style={{ padding: '0.5rem' }}>Ahora me encuentro desarrollándola, y al acercarse el momento de terminarla, veo la necesidad de dar a conocer el producto y ofrecer algún medio para mostrarle a los ganaderos cómo funciona..</p>
             </div>
           } />
 
@@ -340,11 +370,15 @@ export default function Home() {
               <Image style={{ padding: '0.5rem', maxWidth: '600px', width: '100%', height: 'auto' }} src={boletoView} />
               <a style={{ padding: '0.5rem' }} href="https://feriacortijo.vercel.app/">Ir al sitio.</a>
               <h1 style={{ padding: '0.5rem' }}>Escanea el boleto o ve al sitio para introducir el código del boleto</h1>
+              <p style={{ padding: '0.5rem' }}>Desarrollado en 2024</p>
               <p style={{ padding: '0.5rem' }}>
-                Durante la feria de mi pueblo, un amigo tenía una caseta y se me ocurrió que podría ofrecer promociones a sus mejores clientes. Él aceptó la idea con entusiasmo.
+                Durante la feria de mi pueblo, un amigo tenía una caseta y se me ocurrió que podría ofrecer promociones a sus clientes.
               </p>
               <p style={{ padding: '0.5rem' }}>
-                Desarrollé un sistema para que pudiera editar premios y generar boletos en formato PDF. Aunque al final no hizo mucho uso de la aplicación, ya que los camareros estaban siempre muy ocupados con la barra y no entregaban los boletos, la feria resultó ser un gran éxito para él de todos modos.
+                Desarrollé un sistema para poder editar premios y generar boletos en formato PDF. Estos boletos tienen un premio vinculado y siempre dan dicho premio, mostrando una animación de ruleta. Me quedo con que a la gente le gustaron tanto la ruleta como los premios.
+              </p>
+              <p style={{ padding: '0.5rem' }}>
+                Para futuras mejoras me planteo en si añadir más animaciones o juegos además de la ruleta y expandir este producto para que sea un sistema de fidelidad de los clientes.
               </p>
             </div>
           } />
@@ -359,19 +393,54 @@ export default function Home() {
                 manipulación de color inspirada en paletas Tríadicas o el contraste visual de colores opuestos.
                 Utiliza tres canvas: uno para la imagen original, otro para los colores invertidos,
                 y un tercero para fusionar ambas versiones en una visualización combinada.
-                El resultado es una experiencia visual única, enriquecida con animaciones suaves que alternan
-                entre las dos versiones.
               </p>
-              <p style={{ padding: '0.5rem' }}>Características clave:</p>
-              <ul style={{ padding: '0.5rem' }}>
-                <li style={{ padding: '0.5rem' }}><span class="highlight">Paleta de colores dinámica</span>: Personaliza la experiencia visual aplicando transformaciones de color ajustadas a tus preferencias o las de tus usuarios.</li>
-                <li style={{ padding: '0.5rem' }}><span class="highlight">Animaciones fluidas</span>: Integra animaciones de máscaras que transicionan entre versiones de la imagen con un rendimiento óptimo, configurable a través de un parámetro de FPS.</li>
-                <li style={{ padding: '0.5rem' }}><span class="highlight">Optimización de rendimiento</span>: Diseñado para manejar múltiples animaciones en pantalla sin comprometer la fluidez, asegurando una experiencia impecable</li>
-              </ul>
               <p style={{ padding: '0.5rem' }}>
-                Ideal para aplicaciones que buscan un componente visualmente impactante y personalizable.
-                ¡Lleva tus imágenes a un nuevo nivel con esta herramienta creativa y eficiente!
+                Para ser sinceros, lo realicé en poco tiempo y no le voy a poner más empeño. No está optimizado para nada y lo dejo solo porque es una idea que, para mi gusto, está bien implementada, aun con las mejoras que puede tener.
               </p>
+            </div>
+          } />
+
+          <WindowComponentClose ref={btnSdsControl} title="Empresa 1" initialX={100} initialY={100} contenido={
+            <div className="presentation-container">
+              <p style={{ padding: '0.5rem' }}>Desarrollado en 2024 - 2025</p>
+              <h1 style={{ padding: '0.5rem' }}>Sistema Contable</h1>
+              <p style={{ padding: '0.5rem' }}>
+                Primer trabajo remunerado. Desarrollé para una empresa la solución a la necesidad de automatizar los partes realizados por los trabajadores,
+                controlando estos gastos en el balance de las operaciones de trabajo para realizar documentos de presupuestos y facturas a los clientes de forma sencilla.
+              </p>
+              <p style={{ padding: '0.5rem' }}>
+                Se necesitó de 2 meses de desarrollo y 2 meses de testing e integración en dicha empresa. Todo hecho a medida y atendiendo a las peticiones sin problemas.
+              </p>
+              <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={controlView5} />
+              <p style={{ padding: '0.5rem', marginBottom: '14px' }}>El operario introduce sus partes diarios.</p>
+              <Image style={{ padding: '0.5rem', maxWidth: '600px', width: '100%', height: 'auto' }} src={controlView1} />
+              <p style={{ padding: '0.5rem', marginBottom: '14px' }}>Inicio de app Oficina.</p>
+              <Image style={{ padding: '0.5rem', maxWidth: '600px', width: '100%', height: 'auto' }} src={controlView2} />
+              <p style={{ padding: '0.5rem', marginBottom: '14px' }}>Balance Gastos/Beneficio en una operación de trabajo.</p>
+              <Image style={{ padding: '0.5rem', maxWidth: '600px', width: '100%', height: 'auto' }} src={controlView3} />
+              <p style={{ padding: '0.5rem', marginBottom: '14px' }}>Horas de trabajo de dicha operacion de trabajo.</p>
+              <Image style={{ padding: '0.5rem', maxWidth: '600px', width: '100%', height: 'auto' }} src={controlView4} />
+              <p style={{ padding: '0.5rem', marginBottom: '14px' }}>Proforma generada de dicha operación de trabajo.</p>
+            </div>
+          } />
+
+          <WindowComponentClose ref={btnFotos365} title="Fotos 365" initialX={100} initialY={100} contenido={
+            <div className="presentation-container">
+              <p style={{ padding: '0.5rem' }}>Desarrollado en 2025</p>
+              <h1 style={{ padding: '0.5rem' }}>Plataforma Web: Fotos y Videos</h1>
+              <p style={{ padding: '0.5rem' }}>
+                Plataforma para crear y modificar todos los componentes, paleta de colores y textos que contiene dicho álbum común. Realizado para la boda de mi tía.
+              </p>
+              <p style={{ padding: '0.5rem' }}>
+                Las fotos y los videos subidos a la plataforma se comprimen para permitir un renderizado rápido en la app. Contiene una función para descargar todo en un archivo .zip, comprimiendo por separado fotos y videos, manteniendo la calidad original del álbum.
+              </p>
+              <p style={{ padding: '0.5rem' }}>
+                La página de administración de álbumes se mantiene cifrada, para que la gestión de los mismos sea exclusivamente de mi propiedad.
+              </p>
+              <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={fotos365View1} />
+              <p style={{ padding: '0.5rem', marginBottom: '10px' }}>Edición Albúm.</p>
+              <Image style={{ padding: '0.5rem', maxWidth: '600px', width: '100%', height: 'auto' }} src={fotos365View2} />
+              <p style={{ padding: '0.5rem' }}>Añadir contenido.</p>
             </div>
           } />
 

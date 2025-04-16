@@ -32,16 +32,12 @@ const categories = [
     items: [
       {
         id: 'action-games',
-        label: 'Un juego metroidvania en',
+        label: 'Un juego de cartas',
         icon: <>⚔️</>
       },
       {
         id: 'action-games2',
-        label: 'el que la progresión se da'
-      },
-      {
-        id: 'action-games3',
-        label: 'cumpliendo retos'
+        label: 'multijugador por turnos.'
       }
     ]
   },
@@ -62,6 +58,26 @@ const categories = [
       {
         id: 'lighting2',
         label: 'infrarrojo, Bluetooth, Wi-Fi'
+      }
+    ]
+  },
+  {
+    id: 'AI',
+    label: 'Inteligencia Artificial',
+    icon: <>🤖</>,
+    items: [
+      {
+        id: 'book',
+        label: 'Generar documento',
+        icon: <>📚</>
+      },
+      {
+        id: 'book2',
+        label: 'a partir de pdf,'
+      },
+      {
+        id: 'book3',
+        label: 'con sonidos.'
       }
     ]
   }

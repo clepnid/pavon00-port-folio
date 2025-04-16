@@ -3,6 +3,10 @@
   padding: 20px;
 }
 
+p {
+  line-height: 1.5; /* o puedes usar px, %, etc. */
+}
+
 .highlight {
   font-weight: bold;
 }
