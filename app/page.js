@@ -348,7 +348,7 @@ export default function Home() {
           <WindowComponentClose ref={btnGanaderiapp} title="Ganaderiapp" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
               <Image style={{ padding: '0.5rem', maxWidth: '400px', width: '100%', height: 'auto' }} src={ganaderiappView} />
-              <a style={{ padding: '0.5rem' }} href="https://ganaderiaapp.vercel.app/">Ir al sitio.</a>
+              <a style={{ padding: '0.5rem' }} href="https://ganaderiapp.com/">Ir al sitio.</a>
               <p style={{ padding: '0.5rem' }}>Desarrollado desde 2024 - 2025</p>
               <h2 style={{ padding: '0.5rem' }}>Aplicación Web</h2>
               <p style={{ padding: '0.5rem' }}>Mis suegros tienen una ganadería, y como no encontraban una aplicación que les gustara, me puse a investigar sobre los problemas que enfrentan los ganaderos. A partir de ahí, decidí desarrollar una aplicación para facilitarles un poco la vida.</p>
