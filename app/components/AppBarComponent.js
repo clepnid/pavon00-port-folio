@@ -14,7 +14,7 @@ class AppBarComponent extends Component {
         <div className="app-bar-container">
         <Button style={{ margin: '3px', padding: '8 0px', fontFamily: 'MS Sans Serif' }} primary onClick={funcionBoton}>{themeChanger ? 'Parar Cambio Tema Automático' : 'Cambiar Tema'}</Button>
           <Separator orientation='vertical' className="app-bar-separator" />
-          <div className="app-bar-email">ilovepavon@gmail.com</div>
+          <div className="app-bar-email">pavondesarrollo@gmail.com</div>
           <Separator orientation='vertical' className="app-bar-separator" />
           <Clock style={{ fontWeight: 600, padding: '0 8px', fontFamily: 'MS Sans Serif', marginLeft: 'auto'}} />
         </div>
