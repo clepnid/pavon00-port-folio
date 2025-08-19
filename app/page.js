@@ -168,6 +168,7 @@ export default function Home() {
   const btnComplementary = useRef(null);
   const btnCortijo = useRef(null);
   const btnAutobiografia = useRef(null);
+  const btnAutobiografia2 = useRef(null);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isSmallHeight, setIsSmallHeight] = useState(false);
 
@@ -260,6 +261,11 @@ export default function Home() {
       btnAutobiografia.current.handleOpenClick();
     }
   };
+  const llamarMetodoVisibilidadAutoBiografia2 = () => {
+    if (btnAutobiografia2.current) {
+      btnAutobiografia2.current.handleOpenClick();
+    }
+  };
 
   const arrayOnClicks = [llamarMetodoVisibilidadUser, llamarMetodoVisibilidadFgif, llamarMetodoVisibilidadClepnid, llamarMetodoVisibilidadGanaderiapp, llamarMetodoVisibilidadCortijo, llamarMetodoVisibilidadComplementary, llamarMetodoVisibilidadControl, llamarMetodoVisibilidadFotos365];
 
@@ -290,7 +296,7 @@ export default function Home() {
               maxWidth: '740px',
             }}>
               <Escritorio arrayOnClicks={arrayOnClicks} />
-              <Autobiografia funcionBoton={llamarMetodoVisibilidadAutoBiografia} />
+              <Autobiografia funcionBoton={llamarMetodoVisibilidadAutoBiografia} funcionBoton2={llamarMetodoVisibilidadAutoBiografia2} />
             </div>
             <div style={{
               flex: '1 1 100%', // Se ajusta al 100% en pantallas pequeñas
@@ -444,9 +450,15 @@ export default function Home() {
             </div>
           } />
 
-          <WindowComponentClose ref={btnAutobiografia} title="Autobiografía" initialX={100} initialY={100} contenido={
+          <WindowComponentClose ref={btnAutobiografia} title="CV" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
-              <MyPdfPage />
+              <MyPdfPage link={'https://pavon00-port-folio.vercel.app/esp_resume.pdf'}/>
+            </div>
+          } />
+
+          <WindowComponentClose ref={btnAutobiografia2} title="CV" initialX={100} initialY={100} contenido={
+            <div className="presentation-container">
+              <MyPdfPage link={'https://pavon00-port-folio.vercel.app/ing_resume.pdf'}/>
             </div>
           } />
 
