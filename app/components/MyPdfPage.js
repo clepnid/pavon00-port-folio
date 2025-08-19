@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 
-const PdfViewer = () => {
+const PdfViewer = ({link}) => {
   useEffect(() => {
     const isMobile = /Mobi|Android/i.test(navigator.userAgent);
     if (isMobile) {
       // Redirigir a la ruta específica para móviles
-      window.location.href = 'https://pavon00-port-folio.vercel.app/autobiografia.pdf';
+      window.location.href = link;
     }
   }, []);
 
   return (
     <div style={{ height: 'calc(100vh - 120px)' }}>
       <iframe
-        src={`/autobiografia.pdf`}
+        src={link}
         width="100%"
         height="100%"
         title="PDF Viewer"
