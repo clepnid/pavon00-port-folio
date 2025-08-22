@@ -451,13 +451,13 @@ export default function Home() {
 
           <WindowComponentClose ref={btnAutobiografia} title="CV" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
-              <MyPdfPage link={'https://pavon00-port-folio.vercel.app/esp_resume.pdf'}/>
+              <MyPdfPage link={'https://pavon00-port-folio.vercel.app/CV_ANTONIO_JESUS_PAVON_CORREA_ESP.pdf'}/>
             </div>
           } />
 
           <WindowComponentClose ref={btnAutobiografia2} title="CV" initialX={100} initialY={100} contenido={
             <div className="presentation-container">
-              <MyPdfPage link={'https://pavon00-port-folio.vercel.app/ing_resume.pdf'}/>
+              <MyPdfPage link={'https://pavon00-port-folio.vercel.app/CV_ANTONIO_JESUS_PAVON_CORREA_ING.pdf'}/>
             </div>
           } />
 
