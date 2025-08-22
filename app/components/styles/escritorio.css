@@ -8,6 +8,7 @@
 }
 
 .icono {
+    cursor: pointer;
     text-align: center;
     transition: transform 0.3s;
     max-width: 100px;
