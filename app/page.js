@@ -347,8 +347,7 @@ export default function Home() {
               <p style={{ padding: '0.5rem' }}>Actualizado el 16/04/2025.</p>
               <p style={{ padding: '0.5rem' }}>He creado un ícono que despliega una ventana para explicar cada aplicación que he desarrollado.</p>
               <p style={{ padding: '0.5rem' }}>Dedico todo el tiempo posible a la programación, siempre tengo una nueva idea en mente para desarrollar.</p>
-              <p style={{ padding: '0.5rem' }}>En el escritorio se encuentra disponible un PDF vinculado que contiene mi autobiografía.</p>
-              <p style={{ padding: '0.5rem' }}>Mi objetivo al escribir esta autobiografía es ofrecer una visión transparente de mi trayectoria, para que puedas evaluar si mi experiencia y mis habilidades se alinean con lo que buscas.</p>
+              <p style={{ padding: '0.5rem' }}>En el escritorio se encuentra disponible un PDF con mi currículum.</p>
             </div>
           } />
           <WindowComponentClose ref={btnGanaderiapp} title="Ganaderiapp" initialX={100} initialY={100} contenido={
